@@ -8,6 +8,7 @@ import streamlit.components.v1 as components
 transformer = joblib.load('transformer.sav')
 pca = joblib.load('pca.sav')
 ada = joblib.load('ada.sav')
+st.set_page_config(layout="wide")
 with st.sidebar:
     
     choose = option_menu("Welcome", ["Home", "Tech Stack","Predictor", "Creators"],
@@ -81,11 +82,13 @@ def getData(df=None, Pregnancies=None, Glucose= None, BloodPressure= None, SkinT
         df = df[['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin','BMI', 'DiabetesPedigreeFunction', 'Age']]
         return df
 
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
 def html():
     components.html(
     """
-    
-   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +104,7 @@ def html():
     <style>
       *{
     font-family: 'Ubuntu';
-    zoom: 95.1%;
+    zoom: 91.5%;
 }
 a
 {
@@ -126,7 +129,7 @@ body
     justify-content: center;
     width:100%;
     height:100%;
-    left:30%;
+    
 }
 .maincard
 {
@@ -153,6 +156,7 @@ body
     background-color: black;
     transition: all 0.3s ease-in-out;
 }
+
 .card2
 {
     
@@ -481,6 +485,10 @@ color: #CCC;
        
         
     </div>
+    <script>
+    let header=document.parentNode.getElementsByTagName('header')[0];
+    header.innerHTML="";
+    </script>
 </body>
 </html>
     """,
