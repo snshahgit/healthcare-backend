@@ -20,7 +20,7 @@
             display: flex;
             width: 100vw;
             height: 100vh;
-            justify-content: center;
+            justify-content: space-evenly;
             flex-wrap: wrap;
             align-items: center;
             font-family: Avenir, sans-serif;
@@ -144,7 +144,19 @@
         .tariffCards>div.first {
             margin-top: -70px;
             background-color: #352f64;
-            background-image: linear-gradient(135deg, #415197, #352f64);
+            background-image: linear-gradient(135deg, #4a5cae, #53499c);
+            box-shadow: 5px 5px 60px rgba(34, 50, 84, 0.1), 1px 1px 0px 1px #352f64;
+        }
+        .tariffCards>div.second {
+            margin-top: -70px;
+            background-color: #352f64;
+            background-image: linear-gradient(135deg, #344073, #272154);
+            box-shadow: 5px 5px 60px rgba(34, 50, 84, 0.1), 1px 1px 0px 1px #352f64;
+        }
+        .tariffCards>div.third {
+            margin-top: -70px;
+            background-color: #352f64;
+            background-image: linear-gradient(135deg, #272a3b, #181247);
             box-shadow: 5px 5px 60px rgba(34, 50, 84, 0.1), 1px 1px 0px 1px #352f64;
         }
 
@@ -183,10 +195,11 @@
             color: white;
             text-align: center;
             width: 50%;
-            height: 18%;
+            height: 13%;
             display: flex;
             align-items: center;
             justify-content: center;
+            
             /* font-style:oblique; */
 
         }
@@ -226,7 +239,9 @@
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            height: 600px;
+            height: 750px;
+            box-sizing: border-box;
+            margin:8px 10px;
 
         }
     </style>
@@ -280,7 +295,7 @@
         </div>
     </div>
     <div class="card">
-        <h1>Front-end</h1>
+        <h1>Frontend</h1>
         <div class="tariffCards" id="Frontend">
             <div class="economy">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="">
@@ -302,12 +317,22 @@
                     alt="">
                 <h2>Bootstrap</h2>
             </div>
+            <div class="second">
+                <img src="https://camo.githubusercontent.com/c38bf4a44750bd9b576a2259a5074dd277d63f0a412b5b1f31f54e516711ef5b/687474703a2f2f736173732d6c616e672e636f6d2f6173736574732f696d672f7374796c6567756964652f7365616c2d636f6c6f722d61656630333534632e706e67"
+                    alt="">
+                <h2>Sass</h2>
+            </div>
+            <div class="third">
+                <img src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/screenshot_361.png?itok=w4CzcWyb"
+                    alt="">
+                <h2>Tailwind</h2>
+            </div>
         </div>
     </div>
 
 
     <div class="card">
-        <h1>Back-end</h1>
+        <h1>Backend</h1>
         <div class="tariffCards" id="Frontend">
             <div class="economy">
                 <img src="https://avatars.githubusercontent.com/u/27804?s=280&v=4" alt="">
@@ -360,8 +385,8 @@
                 <h2>AWS EC2</h2>
             </div>
             <div class="business">
-                <img src="https://cdn.worldvectorlogo.com/logos/heroku-4.svg" alt="">
-                <h2>Heroku</h2>
+                <img src="https://cdn.iconscout.com/icon/free/png-256/nginx-3521604-2945048.png" alt="">
+                <h2>Nginx</h2>
             </div>
 
         </div>

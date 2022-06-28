@@ -88,7 +88,7 @@ def html():
     components.html(
       contributors
      ,
-    height=1000,
+    height=1400,
     
     scrolling=True,
 )
