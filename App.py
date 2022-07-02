@@ -1,5 +1,6 @@
 import streamlit as st
 import joblib
+import requests
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
@@ -12,7 +13,7 @@ ada = joblib.load('ada.sav')
 st.set_page_config(layout="wide")
 with st.sidebar:
     
-    choose = option_menu("Welcome", ["Home", "Tech Stack","Predictor","ML Code", "Creators"],
+    choose = option_menu("Welcome", ["Home", "Tech Stack","Predictor","ML Code", "Contributors"],
                          
                          menu_icon="activity", default_index=0, 
                          styles={
@@ -155,36 +156,15 @@ if choose=="Predictor":
 
     pred()
 elif choose=="Home":
-    # st.title('AI in Healthcare')
-    st.markdown("<h1 style='text-align: center;'>Healthcare AI</h1>", unsafe_allow_html=True)
-    components.html('''
-    
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        </style>
-</head>
-<body>
-    <img src="healthcare.gif" alt="" style="width:30%;">
-    <h1>slflwefwlf</h1>
-</body>
-</html>
+    st.title('AI in Healthcare')
+    st.markdown("<p style='text-align: justify;'>The objective of the project is to diagnostically predict whether or not a patient has Type 2 diabetes. \nThis predictor is built for Women above 21 years of age. The dataset, originally from the National Institute of Diabetes and Digestive and Kidney Diseases, used for this project consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.</p>", unsafe_allow_html=True)
 
-    ''', )
-    
+    # st.markdown("<h1 style='text-align: center;'>Healthcare AI</h1>", unsafe_allow_html=True)
 
-    # import requests
-    
+    with open("pic.html",'r') as f:
+        pic=f.read();
+    components.html(pic, height=400)
+
     # def load_lottieurl(url: str):
     #     r = requests.get(url)
     #     if r.status_code != 200:
@@ -193,7 +173,7 @@ elif choose=="Home":
  
     # lt_url_hello = "https://assets6.lottiefiles.com/packages/lf20_1yy002na.json"
     # lottie_hello = load_lottieurl(lt_url_hello)
-
+ 
     # st_lottie(
     #         lottie_hello,  
     #         key="hello",
@@ -205,10 +185,10 @@ elif choose=="Home":
     #         width=400            
     # )
 
-    st.write('The objective of the project is to diagnostically predict whether or not a patient has Type 2 diabetes. \nThis predictor is built for Women above 21 years of age. The dataset, originally from the National Institute of Diabetes and Digestive and Kidney Diseases, used for this project consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.')
+    
 elif choose=="Tech Stack":
     tech()
-elif choose=="Creators":
+elif choose=="Contributors":
     html()
 elif choose=="ML Code":
   ml()
