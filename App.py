@@ -131,9 +131,9 @@ def pred():
     if(st.button("Submit")):
         ans = bool(int(ada.predict(piped_data)[0]))
         if ans:
-            st.error("You Have Diabetese")
+            st.error("You Have Diabetes")
         else:
-            st.success("You Do Not Have Diabetese")
+            st.success("You Do Not Have Diabetes")
 
 with open('techstack.html','r') as f:
   techstack=f.read();
