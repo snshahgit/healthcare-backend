@@ -95,7 +95,7 @@ def html():
     scrolling=True,
 )
 def pred():
-    st.title("DIABETES PREDICTOR")
+    st.title("TYPE-2 DIABETES PREDICTOR")
     st.write("For women above 21 years of age")
     
     Pregnancies = st.number_input("",max_value=10)
@@ -157,7 +157,7 @@ if choose=="Predictor":
 
     pred()
 elif choose=="Home":
-    st.title('AI in Healthcare')
+    st.title('AI for Healthcare')
     st.markdown("<p style='text-align: justify;'>The objective of the project is to diagnostically predict whether or not a patient has Type 2 diabetes. \nThis predictor is built for Women above 21 years of age. The dataset, originally from the National Institute of Diabetes and Digestive and Kidney Diseases, used for this project consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.</p>", unsafe_allow_html=True)
 
     # st.markdown("<h1 style='text-align: center;'>Healthcare AI</h1>", unsafe_allow_html=True)
