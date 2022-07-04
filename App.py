@@ -95,7 +95,8 @@ def html():
     scrolling=True,
 )
 def pred():
-    st.title("Diabetese Predictor for Women")
+    st.title("DIABETES PREDICTOR")
+    st.write("For women above 21 years of age")
     
     Pregnancies = st.number_input("",max_value=10)
     st.write("Pregnancies (number)")
