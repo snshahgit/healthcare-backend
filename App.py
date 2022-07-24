@@ -14,7 +14,7 @@ st.set_page_config(layout="wide")
 with st.sidebar:
     
     choose = option_menu("Welcome", ["Home", "Tech Stack","Predictor","ML Code", "Contributors"],
-                         
+                         icons=['house', 'stack', 'cpu','terminal', 'people-fill'],
                          menu_icon="activity", default_index=0, 
                          styles={
                             "container": {"padding": "5!important", "background-color": "#1a1a1a"},
@@ -98,9 +98,6 @@ def pred():
     st.title("TYPE-2 DIABETES PREDICTOR")
     st.write("For women above 21 years of age")
     
-    Pregnancies = st.number_input("",max_value=10)
-    st.write("Pregnancies (number)")
-    
     Glucose =st.number_input("",max_value=250)
     st.write("Glucose (mmol / L)")
     
@@ -113,10 +110,20 @@ def pred():
     Insulin=st.number_input("",max_value=251)
     st.write("Insulin (mu U/ml)")
     
-    BMI=st.number_input("",max_value=33.0)
-    st.write("BMI (Body mass index)")
+    height=st.number_input("",min_value= 60, max_value=220)
+    st.write("Height (in cm)")
+    height/=100
+
+    weight=st.number_input("",min_value= 30, max_value=170)
+    st.write("Weight (in kg)")
+
+    BMI= weight/(height**2)
     
-    Age=st.number_input("",max_value=99)
+    Pregnancies = st.slider("",0,10)
+    st.write("Pregnancies (number)")
+    
+
+    Age=st.slider("",21, 85)
     st.write("Age (in years)")
     st.write("")
     DiabetesPedigreeFunction = np.random.uniform(-1.5,1.5, 1)[0]
@@ -131,9 +138,9 @@ def pred():
     if(st.button("Submit")):
         ans = bool(int(ada.predict(piped_data)[0]))
         if ans:
-            st.error("You Have Diabetes")
+            st.error("**The patient has high risk of Type-2 Diabetes**")
         else:
-            st.success("You Do Not Have Diabetes")
+            st.success("**The patient has low risk of Type-2 Diabetes**")
 
 with open('techstack.html','r') as f:
   techstack=f.read();
