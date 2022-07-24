@@ -96,7 +96,7 @@ def html():
 )
 def pred():
     st.title("TYPE-2 DIABETES PREDICTOR")
-    st.write("For women above 21 years of age")
+    st.subheader("For women above 21 years of age")
     
     Glucose =st.number_input("",max_value=250)
     st.write("Glucose (mmol / L)")
