@@ -4,18 +4,8 @@ This repository contains the end-to-end code for the AI/ML based type-2 diabetes
 
 ## SETUP
 
-1. `git pull`
+Step 1: Build a virtual environment or a docker container
 
-2. `python -m pip install -r requirements.txt`
+Step 2: `pip install -r requirements.txt` to install all the dependencies
 
-3. `git branch componentName-featureName-date.version`
-
-4. `git checkout branch componentName-featureName-date.version`
-
-5. `Make Changes`
-
-6. `git add .`
-
-7. `git commit -m "changes made"`
-
-8. `git push`
+Step 3: To run the app, `streamlit run App.py` in the terminal open in the working directory
